@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwayne "The Rock" Johnson - Biography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* NEW: Responsive image styles */
+        .responsive-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .image-container {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #d4af37;
+            --accent: #c53030;
+            --light: #f4f4f4;
+            --dark: #121212;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            font-weight: 300;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid var(--secondary);
+            background: rgba(0,0,0,0.3);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* UPDATED: Image placeholder with better styling */
+        .image-placeholder {
+            flex: 1;
+            min-width: 300px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px dashed #ccc;
+            transition: transform 0.3s;
+            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+            overflow: hidden;
+        }
+        
+        .image-placeholder:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-placeholder i {
+            font-size: 3rem;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        
+        .image-placeholder p {
+            color: #777;
+            text-align: center;
+            font-style: italic;
+            padding: 0 10px;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+        }
+        
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--secondary);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+            top: 20px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content:after {
+            right: -50px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:after {
+            left: -50px;
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Movies Section */
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .movie-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .movie-image {
+            height: 300px;
+            background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            overflow: hidden;
+        }
+        
+        .movie-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .movie-image i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .movie-info {
+            padding: 20px;
+        }
+        
+        .movie-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .movie-year {
+            color: #777;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-content:after {
+                left: -40px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">THE ROCK</div>
+            <ul class="nav-links">
+                <li><a href="#early-life">Early Life</a></li>
+                <li><a href="#wrestling">Wrestling</a></li>
+                <li><a href="#acting">Acting</a></li>
+                <li><a href="#business">Business</a></li>
+                <li><a href="#personal">Personal Life</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <h1>Dwayne "The Rock" Johnson</h1>
+            <p class="subtitle">Actor • Producer • Businessman • Former Professional Wrestler</p>
+            <p class="quote">"Success isn't always about greatness. It's about consistency. Consistent hard work leads to success. Greatness will come."</p>
+        </div>
+    </header>
+
+    <!-- Introduction -->
+    <section id="intro">
+        <div class="container">
+            <div class="section-title">
+                <h2>Introduction</h2>
+            </div>
+            <div class="section-content">
+                <div class="text-content">
+                    <p>Dwayne Douglas Johnson, universally known as "The Rock," is an American actor, producer, businessman, and former professional wrestler. With a film career that has generated over $14.9 billion worldwide, he is one of the highest-grossing and highest-paid actors in the world.</p>
+                    <p>His journey from a troubled youth to global superstar exemplifies resilience, relentless work ethic, and charismatic appeal that transcends industries. This comprehensive biography explores the life and career of a man who evolved from third-generation wrestler to global icon, creating an unparalleled legacy across sports entertainment, film, and business.</p>
+                </div>
+                <div class="image-container">
+                    <img src="MV5BOWUzNzIzMzQtNzMxYi00OWRiLTlhZjEtZTRjYWVkYzI4ZjMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Dwayne Johnson Portrait" class="responsive-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-box">
+                <div class="stat-number">10x</div>
+                <div class="stat-text">WWE World Champion</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">$14.9B+</div>
+                <div class="stat-text">Box Office Revenue</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">260M+</div>
+                <div class="stat-text">Social Media Followers</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">50+</div>
+                <div class="stat-text">Film Appearances</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Life -->
+    <section id="early-life">
+        <div class="container">
+            <div class="section-title">
+                <h2>Early Life & Education</h2>
+            </div>
+            <div class="section-content">
+                <div class="image-container">
+                    <img src="ab170a5dec87c13da2c1d9f954.jpg" alt="Dwayne Johnson as a child" class="responsive-img">
+                </div>
+                <div class="text-content">
+                    <p>Dwayne Douglas Johnson was born on May 2, 1972, in Hayward, California, to professional wrestler Rocky Johnson and Ata Johnson. His multicultural heritage includes Black Nova Scotian roots from his father and Samoan ancestry from his mother, whose own father was legendary wrestler Peter "High Chief" Maivia.</p>
+                    <p>Johnson's early years were marked by constant relocation as his father traveled the wrestling circuit. He lived in approximately 13 different states, attending a new school nearly every year. This transient lifestyle led to academic struggles and behavioral issues.</p>
+                    <p>At Freedom High School in Bethlehem, Pennsylvania, football coach Jody Cwik recognized Johnson's athletic potential and recruited him for the team. This proved to be a pivotal intervention, with Johnson later reflecting that his thought process started to change and he began thinking about goals.</p>
+                    <p>Johnson earned a full athletic scholarship to the University of Miami, where he played defensive tackle on their 1991 national championship team. He graduated in 1995 with a Bachelor of General Studies and dual majors in criminology and physiology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wrestling Career -->
+    <section id="wrestling">
+        <div class="container">
+            <div class="section-title">
+                <h2>Wrestling Stardom</h2>
+            </div>
+            <div class="section-content">
+                <div class="text-content">
+                    <p>After his football dreams ended, Johnson turned to his family's vocation, beginning his wrestling training under his father Rocky Johnson and WWE legend Pat Patterson. He debuted in March 1996 under his real name before adopting "Flex Kavana" in the United States Wrestling Association.</p>
+                    <p>Johnson signed with WWE in 1996, debuting at that year's Survivor Series as Rocky Maivia. The clean-cut, smiling babyface character was initially rejected by fans, leading to Johnson's pivotal transformation into "The Rock" - a brash, charismatic villain who referred to himself in the third person and electrified audiences with his unparalleled microphone skills.</p>
+                    <p>Johnson's legendary feuds with "Stone Cold" Steve Austin, Triple H, John Cena, and Mankind defined WWE's "Attitude Era" and propelled wrestling into mainstream popularity. His charismatic promos and catchphrases became part of popular culture.</p>
+                    <p>After transitioning to a part-time wrestling schedule in 2004 to focus on acting, Johnson made several celebrated returns, most notably his 2011-2013 feud with John Cena and his 2024 return as "The Final Boss," aligning with his cousin Roman Reigns.</p>
+                </div>
+                <div class="image-container">
+                    <img src="the-rock.png" alt="The Rock in WWE action" class="responsive-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acting Career -->
+    <section id="acting">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hollywood Success</h2>
+            </div>
+            <div class="section-content">
+                <div class="image-container">
+                    <img src="The-Rocks-Family-Tree-Unveiling-Dwayne-Johnsons-Wrestling-Empire-and-WWE-Lineage-1.png" alt="The Scorpion King movie poster" class="responsive-img">
+                </div>
+                <div class="text-content">
+                    <p>Johnson's first significant film role came as the Scorpion King in 2001's "The Mummy Returns," followed by a lead role in the 2002 prequel "The Scorpion King". His performance in the latter earned him a Guinness World Record for the highest-paid first-time leading actor.</p>
+                    <p>Johnson strategically balanced family-friendly films with action roles, steadily building his box office appeal. His family films include "The Game Plan", "Tooth Fairy", "Jumanji: Welcome to the Jungle", and "Jungle Cruise". His action franchises include the "Fast & Furious" series, "Jumanji" sequels, "San Andreas", "Rampage", and "Red Notice".</p>
+                    <p>Johnson's 2016 performance as the demigod Maui in Disney's "Moana" earned him a BTVA People's Choice Voice Acting Award. Through his Seven Bucks Productions, he has expanded his creative control, producing many of his own films as well as television series including "Ballers" and the autobiographical "Young Rock".</p>
+                    <p>His role in 2024's "The Smashing Machine," where he undergoes a dramatic physical and emotional transformation to portray MMA fighter Mark Kerr, represents a new artistic direction focused on vulnerability and dramatic depth.</p>
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 60px;">
+                <h3>Notable Films</h3>
+            </div>
+            <div class="movies-grid">
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="hyy.jpg" alt="The Scorpion King" class="responsive-img">
+                    </div>
+                    <div class="movie-info">
+                        <div class="movie-title">The Scorpion King</div>
+                        <div class="movie-year">2002</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Fast_Five_poster.jpg/220px-Fast_Five_poster.jpg" alt="Fast Five" class="responsive-img">
+                    </div>
+                    <div class="movie-info">
+                        <div class="movie-title">Fast Five</div>
+                        <div class="movie-year">2011</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Jumanji_Welcome_to_the_Jungle.png/220px-Jumanji_Welcome_to_the_Jungle.png" alt="Jumanji: Welcome to the Jungle" class="responsive-img">
+                    </div>
+                    <div class="movie-info">
+                        <div class="movie-title">Jumanji: Welcome to the Jungle</div>
+                        <div class="movie-year">2017</div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Moana_Teaser_Poster.jpg/220px-Moana_Teaser_Poster.jpg" alt="Moana" class="responsive-img">
+                    </div>
+                    <div class="movie-info">
+                        <div class="movie-title">Moana</div>
+                        <div class="movie-year">2016</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Ventures -->
+    <section id="business">
+        <div class="container">
+            <div class="section-title">
+                <h2>Business Ventures & Philanthropy</h2>
+            </div>
+            <div class="section-content">
+                <div class="text-content">
+                    <p>Beyond entertainment, Johnson has established himself as a savvy entrepreneur and philanthropist. In 2024, Johnson joined the board of directors of WWE's parent company TKO Group Holdings while also acquiring intellectual property rights to "The Rock" name.</p>
+                    <p>He is also a co-owner of the United Football League, continuing his connection to the sport. Through his Project Rock Collection partnership with Under Armour, Johnson has created a successful line of athletic apparel featuring his iconic "Bull" symbol.</p>
+                    <p>In 2006, Johnson founded The Dwayne Johnson Rock Foundation to help terminally ill children. He has also made the largest donation ever by a former student to the University of Miami's athletics department and is an active supporter of military veterans and disaster relief initiatives.</p>
+                </div>
+                <div class="image-container">
+                    <img src="th.jpg" class="responsive-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Life -->
+    <section id="personal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Personal Life</h2>
+            </div>
+            <div class="section-content">
+                <div class="image-container">
+                    <img src="dwayne-johnson.webp" class="responsive-img">
+                </div>
+                <div class="text-content">
+                    <p>Johnson has been married to singer Lauren Hashian since 2019 after several years of dating. He has three daughters: Simone Alexandra Johnson (born 2001) with his ex-wife Dany Garcia (married 1997-2008), and Jasmine (born 2015) and Tiana Gia (born 2018) with Lauren Hashian.</p>
+                    <p>In 2020, his daughter Simone followed the family tradition, signing with WWE and becoming the first fourth-generation wrestler in company history.</p>
+                    <p>Despite his global fame, Johnson maintains strong connections to his heritage. In 2004, Samoan chief Malietoa Tanumafili II bestowed upon him the noble title "Seiuli". He holds both American and Canadian citizenship and has expressed strong pride in his Samoan roots.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy -->
+    <section id="legacy">
+        <div class="container">
+            <div class="section-title">
+                <h2>Legacy & Impact</h2>
+            </div>
+            <div class="section-content">
+                <div class="text-content">
+                    <p>Dwayne Johnson's extraordinary journey from a directionless teenager with $7 to his name to one of the most influential entertainers in the world represents a modern embodiment of the American Dream. His films have grossed over $14.9 billion worldwide, making him one of the highest-grossing actors in history.</p>
+                    <p>What distinguishes Johnson's legacy is his versatility and connection with audiences across different mediums and genres. From the wrestling ring to blockbuster films to business boardrooms, he has demonstrated remarkable adaptability while maintaining his core identity.</p>
+                    <p>As he continues to evolve—taking on more dramatic roles like in "The Smashing Machine" while occasionally returning to his wrestling roots—Johnson's career exemplifies the power of reinvention while staying true to one's values. His response to professional setbacks and willingness to take creative risks reveals a depth beyond his charismatic public persona, ensuring his legacy will extend far beyond his record-breaking accomplishments.</p>
+                </div>
+                <div class="image-container">
+                    <img src="HD-wallpaper-dwayne-johnson-the-rock-portrait-white-stone-background-creative-art-american-actor-hollywood.jpg" alt="Dwayne Johnson career collage" class="responsive-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline">
+        <div class="container">
+            <div class="section-title">
+                <h2>Career Timeline</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1996</div>
+                        <p>Debuts in WWE as Rocky Maivia at Survivor Series</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1998</div>
+                        <p>Wins first WWE Championship, becoming the youngest champion at age 26</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2001</div>
+                        <p>Makes film debut as The Scorpion King in "The Mummy Returns"</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2004</div>
+                        <p>Retires from full-time wrestling to focus on acting career</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2011</div>
+                        <p>Returns to WWE and begins feud with John Cena</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2016</div>
+                        <p>Voices Maui in Disney's "Moana" and receives critical acclaim</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <p>Daughter Simone becomes first fourth-generation WWE wrestler</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024</div>
+                        <p>Joins TKO Group Holdings board and returns to WWE as "The Final Boss"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dwayne Johnson</h3>
+                    <p>Actor, producer, businessman, and former professional wrestler who has become one of the most recognizable and influential figures in entertainment.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#early-life">Early Life</a></li>
+                        <li><a href="#wrestling">Wrestling Career</a></li>
+                        <li><a href="#acting">Acting Career</a></li>
+                        <li><a href="#business">Business Ventures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>This is a tribute website. For official inquiries, please visit Dwayne Johnson's official social media channels.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Dwayne Johnson Tribute. All rights reserved. This site is for meysam educational purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(26, 26, 26, 0.95)';
+            } else {
+                nav.style.background = 'var(--primary)';
+            }
+        });
+    </script>
+</body>
+</html>
